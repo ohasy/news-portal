@@ -1,6 +1,8 @@
 import React from 'react';
 import './Footer.scss';
 const Footer: React.FC = () => {
-  return <footer>Yash Ojha (yashojha19@gmail.com)</footer>;
+  return (
+    <footer>Very professional looking footer © - FREE Legal Information</footer>
+  );
 };
 export default Footer;
