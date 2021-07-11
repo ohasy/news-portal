@@ -29,7 +29,21 @@ yarn add -D @babel/runtime @babel/ plugin-transform-runtime
 yarn add -D webpack-bundle-analyzer
 
 yarn add -D husky@4 lint-staged
-#server setup commands
+
+yarn add -D sass-loader node-sass
+
+yarn add -D mini-css-extract-plugin
+
+// for cahcing
+
+yarn add workbox-core workbox-expiration workbox-precaching workbox-routing workbox-strategies workbox-window
+yarn add -D workbox-webpack-plugin
+
+> testing
+> yarn add -D @types/jest @testing-library/react @testing-library/jest-dom jest ts-jest
+
+## server setup commands
+
 npm init -y
 yarn add -D webpack webpack-cli webpack-dev-server typescript dotenv ts-loader
 

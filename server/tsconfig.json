@@ -4,11 +4,14 @@
         "target": "es5",
         "noImplicitAny": false,
         "sourceMap": false,
-        "outDir": "dist"
+        "outDir": "dist",
+        "baseUrl": "src",
+        "paths": { 
+            "@/*": ["*"]
+          }
     },
     "exclude": [
         "node_modules",
-        "dist",
-        "webpack"
+        "dist"
     ]
 }

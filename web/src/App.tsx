@@ -1,14 +1,15 @@
-import ClickCounter from './components/ClickCounter';
-import './style.css';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { Home } from '@/routes/Home';
+import { Article } from '@/routes/Article';
 
 export const App = () => {
   return (
     <>
-      <h1 className={'blue-text'}>
-        React sasdcountr new App: {process.env.kbc}
-      </h1>
-      <img src={'images/dogo.png'} alt={'Doggo'} width="200" height="200" />
-      <ClickCounter />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/article/:url" component={Article} />
+      </Switch>
     </>
   );
 };

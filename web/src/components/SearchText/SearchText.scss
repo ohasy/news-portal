@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+.search-container {
+  input {
+    border-radius: 4px;
+    width: 90vw;
+    color: $textColor;
+    font-size: medium;
+    height: 35px;
+    padding-left: 12px;
+    background: transparent;
+    border: 1px solid $secondaryColor;
+    outline: white;
+  }
+
+  @include smMinBreakPoint {
+    input {
+      border-radius: 4px;
+      width: 600px;
+      color: $textColor;
+      font-size: large;
+      height: 40px;
+      padding-left: 12px;
+      background: transparent;
+      border: 1px solid $secondaryColor;
+      outline: white;
+    }
+  }
+}

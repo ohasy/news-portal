@@ -1,0 +1,19 @@
+@import '../../styles//variables';
+@import '../../styles/mixins';
+.centered-layout {
+  padding-top: 80px;
+  width: 100%;
+  min-height: 96vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $secondaryLight1Color;
+  align-items: center;
+  .layout-children-wrapper {
+    width: 100%;
+  }
+  @include smMinBreakPoint {
+    .layout-children-wrapper {
+      width: 60%;
+    }
+  }
+}

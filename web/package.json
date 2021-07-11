@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --config webpack/webpack.config.js --env env=dev --open",
+    "dev": "webpack serve --config webpack/webpack.config.js --env env=dev --open",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
@@ -15,7 +16,18 @@
   "license": "ISC",
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
+    "ts-newsapi": "^1.0.0",
+    "workbox-core": "^6.1.5",
+    "workbox-expiration": "^6.1.5",
+    "workbox-precaching": "^6.1.5",
+    "workbox-routing": "^6.1.5",
+    "workbox-strategies": "^6.1.5",
+    "workbox-window": "^6.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -24,8 +36,12 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^26.0.24",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "babel-loader": "^8.2.2",
@@ -43,18 +59,33 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.2",
     "husky": "4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.6",
+    "jest-environment-jsdom-fifteen": "^1.0.2",
     "lint-staged": "^11.0.0",
     "mini-css-extract-plugin": "^2.1.0",
+    "module-alias": "^2.2.2",
+    "node-sass": "^6.0.1",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "prettier": "^2.3.2",
     "react-refresh": "^0.10.0",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
     "terser-webpack-plugin": "^5.1.4",
+    "ts-jest": "^27.0.3",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.3.5",
+    "typescript-transform-paths": "^3.0.2",
     "webpack": "^5.43.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "workbox-webpack-plugin": "^6.1.5"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@components": "src/components"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [

@@ -7,7 +7,8 @@ const dotenvDev = dotenv.config({ path: path.join(__dirname, '..', '.env') });
 module.exports = {
     mode: "development",
     devServer: {
-        hot: true
+        hot: true,
+        historyApiFallback: true,
     },
     devtool: "eval-cheap-module-source-map",
     plugins: [

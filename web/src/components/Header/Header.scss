@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  height: 85px;
+  top: 0;
+  background: $primaryLight2Color;
+  width: 100%;
+  border-bottom: solid 3px $primaryLight1Color;
+  div {
+    display: flex;
+    align-items: center;
+    .dogo-img {
+      // position: absolute;
+      top: 0;
+      // left: 85px;
+      height: 35px;
+      width: 35px;
+    }
+    h1 {
+      margin: 0 12px;
+    }
+  }
+
+  @include smMinBreakPoint {
+    flex-direction: row;
+    height: 70px;
+    top: 0;
+    background: $primaryLight2Color;
+    width: 100%;
+
+    border-bottom: solid 3px $primaryLight1Color;
+    position: fixed;
+    top: 0;
+    div {
+      .dogo-img {
+        // position: absolute;
+        top: 0;
+        // left: 85px;
+        height: 90px;
+        width: 90px;
+      }
+      h1 {
+        margin: 0 12px;
+      }
+    }
+  }
+}
