@@ -9,15 +9,6 @@ Formatter: Prettier
 Api: Node + newspai.org
 Unit test: React testing library
 
-
-
-Key Focus on :
-Responsive deesgin for web and mobile
-Accessible for a11y standards
-Multi Env Webpack setup
-
-Images:
-
 Mobile Search View : 
 ![Mobile Search](https://github.com/yasoza/news-portal/blob/master/demo/screenshot-search-mobile.png?raw=true)
 
