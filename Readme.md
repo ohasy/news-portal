@@ -1,5 +1,5 @@
-Tech Stak
-Frontent: React
+Tech Stack
+Frontend: React
 State management: Redux
 Styling: Scss,
 Language: Typescript,
