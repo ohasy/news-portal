@@ -10,6 +10,7 @@ A responsive, accessible and offline supported React progressive web app made fo
 - Bundler: Webpack,
 - Linting: Eslint
 - Formatter: Prettier
+- Commit validation: husky hooks, lint-staged
 - Backend: Node + newspai.org api
 - Unit test: React testing library
 - Accessibility: eslint-plugin-jsx-a11y
