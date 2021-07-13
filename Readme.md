@@ -1,17 +1,22 @@
-Tech Stack
-Frontend: React
-State management: Redux
-Styling: Scss,
-Language: Typescript,
-Bundler: Webpack,
-Linting: Eslint
-Formatter: Prettier
-Api: Node + newspai.org
-Unit test: React testing library
-Accessibility: eslint-plugin-jsx-a11y
-PWA Support (Installable app): webpack-pwa-manifest, service workers
-Offline support: service workers
-CSS modules: obfuscated css in production
+# Description
+
+A responsive, accessible and offline supported React progressive web app made for searching news.
+
+# Tech Stack
+
+> Frontend: React
+> State management: Redux
+> Styling: Scss,
+> Language: Typescript,
+> Bundler: Webpack,
+> Linting: Eslint
+> Formatter: Prettier
+> Backend: Node + newspai.org api
+> Unit test: React testing library
+> Accessibility: eslint-plugin-jsx-a11y
+> PWA Support (Installable app): webpack-pwa-manifest, service workers
+> Offline support: service workers
+> CSS modules: obfuscated css in production
 
 # notes:
 
