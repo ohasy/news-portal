@@ -2,12 +2,27 @@ const { merge } = require("webpack-merge");
 const commonConfig = require("./webpack.common.js");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+
 const styleLoaders = (env) => {
     if (env === "prod") {
         return [
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, "style-loader", 'css-loader'],
+                // use: [MiniCssExtractPlugin.loader, "style-loader", 'css-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "style-loader",
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: true
+                            // modules: {
+                            //     localIdentName: '[sha1:hash:hex:4]', //"[name]__[local]___[hash:base64:5]"
+                            // }
+                        },
+                    }
+                ]
             }, {
                 test: /\.scss$/,
                 use: [
@@ -16,9 +31,10 @@ const styleLoaders = (env) => {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 1,
-                            modules: {
-                                localIdentName: "[name]__[local]___[hash:base64:5]"
-                            }
+                            modules: true
+                            // modules: {
+                            //     localIdentName: '[sha1:hash:hex:4]', //"[name]__[local]___[hash:base64:5]"
+                            // }
                         },
                     },
                     "sass-loader"

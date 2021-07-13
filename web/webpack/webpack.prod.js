@@ -53,6 +53,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css',
             chunkFilename: 'css/[id].[contenthash].css',
+            experimentalUseImportModule: true
         }),
         // new BundleAnalyzerPlugin(),
         new InjectManifest({

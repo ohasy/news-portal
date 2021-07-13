@@ -1,7 +1,6 @@
 import { useAppSelector } from '@/utils/hooks/useAppSelector';
 import { Link, useHistory } from 'react-router-dom';
-import { Layout } from '../Layout/Layout';
-import './NewsList.scss';
+import styles from './NewsList.module.scss';
 export const NewsList = () => {
   const history = useHistory();
 
@@ -13,7 +12,7 @@ export const NewsList = () => {
       {newsList.map((news, index) => (
         <article key={index + news.source.name}>
           <div
-            className="news-item"
+            className={styles.newsItem}
             onClick={() => onClickArticle(news.url)}
             tabIndex={0}
             role="button"
@@ -22,7 +21,7 @@ export const NewsList = () => {
             <h3> {news.title}</h3>
             <figure>
               <img
-                className="article-img"
+                className={styles.articleImg}
                 src={news.urlToImage || ''}
                 alt="article main"
                 width="100%"
@@ -33,7 +32,7 @@ export const NewsList = () => {
               <p>{news.description}</p>
               <Link to={getUrl(news.url)}>Read more</Link>
 
-              <div className="article-details">
+              <div className={styles.articleDetails}>
                 {news.author && <p>{news.author} / </p>}
                 {news.source?.name && news.source.name != news.author && (
                   <p> {news.source.name} / </p>

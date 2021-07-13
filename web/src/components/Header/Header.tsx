@@ -1,8 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import './Header.scss';
-interface HeaderProps {}
-const Header: React.FC<HeaderProps> = ({ children }) => {
+import styles from './Header.module.scss';
+
+const Header: React.FC = ({ children }) => {
   const history = useHistory();
   const onClickLogo = () => history.replace('/');
   return (
@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         onClick={onClickLogo}
       >
         <img
-          className="dogo-img"
+          className={styles.dogoImg}
           src={'/images/dogo.png'}
           alt={'Doggo'}
           width="90"

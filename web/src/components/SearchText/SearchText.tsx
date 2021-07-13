@@ -7,7 +7,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 //   onSearch: (newQuery: string) => void;
 //   query: string;
 // };
-import './SearchText.scss';
+import styles from './SearchText.module.scss';
 
 export const SearchText = () => {
   const location = useLocation();
@@ -26,7 +26,7 @@ export const SearchText = () => {
   };
 
   return (
-    <div className="search-container">
+    <div className={styles.searchContainer}>
       <input
         type="text"
         value={query}
