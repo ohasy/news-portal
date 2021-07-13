@@ -9,13 +9,15 @@ Formatter: Prettier
 Api: Node + newspai.org
 Unit test: React testing library
 Accessibility: eslint-plugin-jsx-a11y
-PWA Support: webpack-pwa-manifest, service workers
+PWA Support (Installable app): webpack-pwa-manifest, service workers
 Offline support: service workers
 CSS modules: obfuscated css in production
 
 # notes:
 
 1. webpack-pwa-manifest allows you to configure manifest.json and generate different size image with one file
+
+# samples:
 
 Mobile Search View :
 ![Mobile Search](https://github.com/yasoza/news-portal/blob/master/demo/screenshot-search-mobile.png?raw=true)
