@@ -6,14 +6,16 @@ const Header: React.FC = ({ children }) => {
   const history = useHistory();
   const onClickLogo = () => history.replace('/');
   return (
-    <header>
+    <header data-testid="header-test">
       <div
+        data-testid="header-logo"
         role="button"
         tabIndex={0}
         onKeyDown={onClickLogo}
         onClick={onClickLogo}
       >
         <img
+          data-testid="newzie-logo"
           className={styles.dogoImg}
           src={'/images/dogo.png'}
           alt={'Doggo'}

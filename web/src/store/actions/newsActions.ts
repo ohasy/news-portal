@@ -4,18 +4,23 @@ import { StoreAction, NewsRequestBody, StoreState } from '@/utils/types';
 import { INewsApiResponse } from 'ts-newsapi/lib/types';
 
 const fetchNewArticles = async (requestBody: NewsRequestBody) => {
-  const rawResponse = await fetch(`${process.env.BASE_URL!}/all-news`, {
-    body: JSON.stringify(requestBody),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    method: 'POST',
-  });
-  const response: INewsApiResponse = await rawResponse.json();
-  return response.articles;
+  try {
+    const rawResponse = await fetch(`${process.env.BASE_URL!}/all-news`, {
+      body: JSON.stringify(requestBody),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    });
+    const response: INewsApiResponse = await rawResponse.json();
+    return response.articles;
+  } catch (e) {
+    console.log(e);
+  }
 };
 export const searchNews =
-  (query: string) => async (dispatch: Dispatch<StoreAction>) => {
+  (query: string) =>
+  async (dispatch: Dispatch<StoreAction>): Promise<void> => {
     const requestBody: NewsRequestBody = {
       query,
       page: 1,
@@ -28,7 +33,11 @@ export const searchNews =
   };
 
 export const loadMore =
-  () => async (dispatch: Dispatch<StoreAction>, getState: () => StoreState) => {
+  () =>
+  async (
+    dispatch: Dispatch<StoreAction>,
+    getState: () => StoreState
+  ): Promise<void> => {
     const { news } = getState();
     const articles = await fetchNewArticles({
       query: news.query,

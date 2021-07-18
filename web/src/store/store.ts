@@ -17,6 +17,8 @@ const store = createStore(
 );
 export default store;
 
-export type AppDispatch = typeof store.dispatch;
+type something = (someVar: any) => Promise<void>;
+
+export type AppDispatch = something | typeof store.dispatch;
 
 export type RootState = ReturnType<typeof store.getState>;

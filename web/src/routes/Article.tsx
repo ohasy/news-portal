@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 export const Article: React.FC = () => {
   const { url }: any = useParams();
 
-  console.log(url);
   return (
     <Layout fullWidth>
       <iframe

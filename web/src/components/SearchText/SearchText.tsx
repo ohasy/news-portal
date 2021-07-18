@@ -1,4 +1,5 @@
 import { searchNews, setQuery } from '@/store/actions';
+import { AppDispatch } from '@/store/store';
 import debounce from '@/utils/debounce';
 import { useAppDispatch, useAppSelector } from '@/utils/hooks/useAppSelector';
 import { ReactChangeEvent } from '@/utils/types';
@@ -9,10 +10,10 @@ import { useLocation, useHistory } from 'react-router-dom';
 // };
 import styles from './SearchText.module.scss';
 
-export const SearchText = () => {
+const SearchText = () => {
   const location = useLocation();
   const history = useHistory();
-  console.log(location);
+
   const dispatch = useAppDispatch();
   const query = useAppSelector((state) => state.news.query);
 
@@ -36,3 +37,5 @@ export const SearchText = () => {
     </div>
   );
 };
+
+export default SearchText;

@@ -52,7 +52,7 @@ module.exports = {
         ]
     },
     output: {
-        filename: 'js/build.[contenthash].js',
+        filename: 'js/build.[contenthash].js', //main js file
         path: getRelativePath('dist'),
         chunkFilename: 'js/[name].[contenthash].js',
         publicPath: '/'

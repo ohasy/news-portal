@@ -1,8 +1,9 @@
 import React from 'react';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
-import { SearchText } from '@/components/SearchText/SearchText';
+import SearchText from '@/components/SearchText/SearchText';
 import styles from './Layout.module.scss';
+
 interface LayoutProps {
   children: React.ReactNode;
   fullWidth?: boolean;

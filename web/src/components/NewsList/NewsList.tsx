@@ -15,10 +15,12 @@ export const NewsList = () => {
             className={styles.newsItem}
             onClick={() => onClickArticle(news.url)}
             tabIndex={0}
+            aria-label="clickable article"
+            data-testid="clickable-article"
             role="button"
             onKeyDown={() => onClickArticle(news.url)}
           >
-            <h3> {news.title}</h3>
+            <h3 data-testid="article-title"> {news.title}</h3>
             <figure>
               <img
                 className={styles.articleImg}
