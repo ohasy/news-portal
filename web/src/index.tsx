@@ -6,8 +6,8 @@ import './styles/_typography.scss';
 import store from './store/store';
 import { Provider } from 'react-redux';
 
-import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
-import registerServiceWorker from './serviceWorkerRegistration';
+import { ErrorBoundary } from '@/components/ErrorBoundary/ErrorBoundary';
+import registerServiceWorker from '@/serviceWorkerRegistration';
 ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundary>

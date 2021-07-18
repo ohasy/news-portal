@@ -8,19 +8,30 @@ module.exports = {
         react: {
             version: 'detect',
         },
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+            typescript: {
+                alwaysTryTypes: true,
+                project: "packages/*/tsconfig.json",
+
+            } // this loads <rootdir>/tsconfig.json to eslint
+        },
     },
     extends: [
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:import/errors',
-        'plugin:import/warnings',
-        'plugin:import/typescript',
         'plugin:jsx-a11y/recommended',
         'plugin:eslint-comments/recommended',
-        'prettier'
+        'prettier',
+        // 'plugin:import/errors',
+        'plugin:import/warnings',
+        'plugin:import/typescript',
     ],
     rules: {
+        "import/extensions": "off",
         'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': ['error'],
         '@typescript-eslint/no-var-requires': 'off',
