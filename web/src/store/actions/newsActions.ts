@@ -3,9 +3,9 @@ import * as actionTypes from './actionTypes';
 import { StoreAction, NewsRequestBody, StoreState } from '@/utils/types';
 import { INewsApiResponse } from 'ts-newsapi/lib/types';
 
-const fetchNewArticles = async (requestBody: NewsRequestBody) => {
+const fetchNewArticles = async (path: string, requestBody: any) => {
   try {
-    const rawResponse = await fetch(`${process.env.BASE_URL!}/all-news`, {
+    const rawResponse = await fetch(`${process.env.BASE_URL!}/${path}`, {
       body: JSON.stringify(requestBody),
       headers: {
         'Content-Type': 'application/json',
@@ -25,29 +25,39 @@ export const searchNews =
       query,
       page: 1,
     };
-    const articles = await fetchNewArticles(requestBody);
+    const articles = await fetchNewArticles('all-news', requestBody);
     dispatch({
       type: actionTypes.SET_NEWS_LIST,
       payload: articles,
     });
   };
 
-export const loadMore =
-  () =>
-  async (
-    dispatch: Dispatch<StoreAction>,
-    getState: () => StoreState
-  ): Promise<void> => {
-    const { news } = getState();
-    const articles = await fetchNewArticles({
-      query: news.query,
-      page: news.page + 1,
-    });
+export const getTopHeadlines =
+  (country?: string) =>
+  async (dispatch: Dispatch<StoreAction>): Promise<void> => {
+    const articles = await fetchNewArticles('top-headlines', { country });
     dispatch({
       type: actionTypes.SET_NEWS_LIST,
       payload: articles,
     });
   };
+
+// export const loadMore =
+//   () =>
+//   async (
+//     dispatch: Dispatch<StoreAction>,
+//     getState: () => StoreState
+//   ): Promise<void> => {
+//     const { news } = getState();
+//     const articles = await fetchNewArticles({
+//       query: news.query,
+//       page: news.page + 1,
+//     });
+//     dispatch({
+//       type: actionTypes.SET_NEWS_LIST,
+//       payload: articles,
+//     });
+//   };
 
 export const setQuery = (query: string) => {
   return {

@@ -1,12 +1,14 @@
 import { useAppSelector } from '@/utils/hooks/useAppSelector';
 import { Link, useHistory } from 'react-router-dom';
 import styles from './NewsList.module.scss';
+
 export const NewsList = () => {
   const history = useHistory();
 
   const newsList = useAppSelector((state) => state.news.newsList);
   const getUrl = (url: string) => `/article/${encodeURIComponent(url)}`;
   const onClickArticle = (url: string) => history.push(getUrl(url));
+
   return (
     <>
       {newsList.map((news, index) => (

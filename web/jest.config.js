@@ -23,6 +23,12 @@ module.exports = {
     setupFilesAfterEnv: [
         "@testing-library/jest-dom/extend-expect",
     ],
+    collectCoverage: true,
+    // "collectCoverageFrom": [
+    //     "**/*.{js,jsx, ts}",
+    //     // "!**/node_modules/**",
+    //     // "!**/vendor/**"
+    // ],
     // "setupTestFrameworkScriptFile": "__tests__/setupTests.js",
 
     // Test spec file resolution pattern

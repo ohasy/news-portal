@@ -1,5 +1,5 @@
-import { searchNews, setQuery } from '@/store/actions';
-import { AppDispatch } from '@/store/store';
+import { getTopHeadlines, searchNews, setQuery } from '@/store/actions';
+// import { AppDispatch } from '@/store/store';
 import debounce from '@/utils/debounce';
 import { useAppDispatch, useAppSelector } from '@/utils/hooks/useAppSelector';
 import { ReactChangeEvent } from '@/utils/types';
@@ -23,6 +23,8 @@ const SearchText = () => {
     if (newQuery.length >= 2) {
       if (location.pathname !== '/') history.replace('/');
       debounce(() => dispatch(searchNews(newQuery)), 1000)();
+    } else if (!newQuery) {
+      debounce(() => dispatch(getTopHeadlines()), 1000)();
     }
   };
 

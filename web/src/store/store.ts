@@ -7,9 +7,16 @@ const composeEnhancers =
   (process.env.NODE_ENV === 'development'
     ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     : null) || compose;
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
   news: newsReducer,
 });
+
+const rootRReducer = (state, action) => {
+  if (action.type === 'user_logout') {
+    return appReducer(undefined, action);
+  }
+  return appReducer(state, action);
+};
 
 const store = createStore(
   rootReducer,

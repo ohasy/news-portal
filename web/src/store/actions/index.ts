@@ -1,1 +1,1 @@
-export { loadMore, searchNews, setQuery } from './newsActions';
+export { searchNews, setQuery, getTopHeadlines } from './newsActions';

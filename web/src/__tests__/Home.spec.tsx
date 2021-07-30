@@ -9,6 +9,11 @@ describe('<Home /> ', () => {
     rest.post(`*/all-news`, (req, res, ctx) => {
       const response = newsResponse();
       return res(ctx.json(response));
+    }),
+
+    rest.post(`*/top-headlines`, (req, res, ctx) => {
+      const response = newsResponse();
+      return res(ctx.json(response));
     })
   );
   //   server.printHandlers();

@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { ApiNewsCountry } from 'ts-newsapi/lib/types';
 import { newsApi } from '../config/newsApi';
 
 interface CustomRequest<T> extends Request {
@@ -20,6 +21,22 @@ export const getNewsController = async (
     pageSize: 20,
     sortBy: 'publishedAt',
     language: 'en',
+  });
+  console.log(response);
+  res.status(200).json(response);
+};
+
+type TopHeadlinesRequestBody = {
+  country: ApiNewsCountry;
+};
+export const getTopHeadlines = async (
+  req: CustomRequest<TopHeadlinesRequestBody>,
+  res: Response
+) => {
+  const { country } = req.body;
+
+  const response = await newsApi.getTopHeadlines({
+    country: country || 'us',
   });
   console.log(response);
   res.status(200).json(response);
